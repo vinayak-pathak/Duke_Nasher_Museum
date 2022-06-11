@@ -42,7 +42,7 @@ if __name__ == "__main__":
 	#fig = plt.figure()
 	#ax = fig.add_subplot(projection='3d')
 	#ax.scatter(XX.reshape((-1, 1)), YY.reshape((-1, 1)), Znoise.reshape((-1, 1)))
-	img = skimage.io.imread('/home/vinayak/nasher_museum/image.jpeg')
+	img = skimage.io.imread('image.jpeg')
 	img_resize = resize(img, (n2, n1), anti_aliasing = True)
 	rgbd = np.hstack((XX.reshape((-1,1)), YY.reshape((-1,1)), Z.reshape((-1,1)), img_resize[:,:, 0].reshape((-1, 1)), img_resize[:,:, 1].reshape((-1, 1)), img_resize[:,:, 2].reshape((-1, 1))))
 	pcd = rgbd[:, :3]
